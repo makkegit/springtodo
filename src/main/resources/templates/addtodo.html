@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add todo!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Add todo</h1>
+	<div>
+		<div class="col-md-4" style="text-align:center">
+		<form  th:object="${todo}" th:action="@{save}" action="#" method="post">
+		  	<label for="fname">What to do?</label>
+			<input type="text" id="mission" th:field="*{mission}" class="form-control"/>
+			<div style="clear: both; display: block; height: 10px, text-align:center;"></div>
+		  	<label for="lname">Status(Do/Doing/Done)</label>
+			<input type="text" id="status" th:field="*{status}" class="form-control"/>
+			<br/>
+			<div style="clear: both; display: block; height: 10px, text-align:center ;"></div>
+			<input align="center" type="submit" class="btn btn-success" value="Save"></input>
+		</form>
+		</div>
+	</div>
+</body>
+</html>
