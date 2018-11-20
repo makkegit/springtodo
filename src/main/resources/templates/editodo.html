@@ -1,20 +1,23 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Edit todo!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.css" th:href="@{css/bootstrap.css}"/>
 </head>
 <body>
-	<h1>Edit todo</h1>
-	
-		<form  th:object="${todo}" th:action="@{save}" action="#" method="post">
-		  	<input type"hidden" th:field=*{id}" class="form-control"/>
-			<input type="text"  th:field="*{mission}"/>
-			<input type="text"  th:field="*{status}" />
-			<br/>
-			<input align="center" type="submit" class="btn btn-success" value="Save"></input>
-		</form>
-		
+	<h1 align="center">Edit todo</h1>
+		<div class="col-md-4" style="text-align:center">
+			<form  th:object="${todo}" th:action="@{../save}" action="#" method="post">
+			<input type="hidden" id="id" th:field="*{id}" class="form-control"/>
+		  		<label for="mname">What to do?</label>
+				<input type="text" id="mission" th:field="*{mission}" class="form-control"/>
+				<div style="clear: both; display: block; height: 10px, text-align:center;"></div>
+		  		<label for="sname">Status(example: Do/Doing/Done)</label>
+				<input type="text" id="status" th:field="*{status}" class="form-control"/>
+				<br/>
+				<div style="clear: both; display: block; height: 10px, text-align:center;"></div>
+				<input align="center" type="submit" class="btn btn-success" value="Edit"/>
+	</div>
 </body>
 </html>

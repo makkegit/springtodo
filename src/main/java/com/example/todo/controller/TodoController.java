@@ -22,7 +22,7 @@ public class TodoController {
     }		
 	
 	// Show all todos
-    @RequestMapping(value="/todos")
+    @RequestMapping(value = "/todos")
     public String todoList(Model model) {	
         model.addAttribute("todolist", trepository.findAll());
         return "todos";
@@ -43,10 +43,12 @@ public class TodoController {
     }
     // Edit todo
     @RequestMapping(value = "/edit/{id}")
-    public String addTodo(@PathVariable("id") Long todoId, Model model) {
+    public String editTodo(@PathVariable("id") Long todoId, Model model) {
     	model.addAttribute("todo", trepository.findById(todoId));
     	return "editodo";
     }
+
+   
     // Delete todo
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)

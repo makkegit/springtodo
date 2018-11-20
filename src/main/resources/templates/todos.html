@@ -28,8 +28,8 @@
     	<tr th:each = "todo : ${todolist}">
     		<td th:text="${todo.mission}"></td>
     		<td th:text="${todo.status}"></td>
-    		<td ><a class="btn btn-info" th:href="@{/edit/{id}(id=${todo.id})}">Edit</a></td>
-    		<td ><a class="btn btn-danger" th:href="@{/delete/{id}(id=${todo.id})}">Delete</a></td>
+    		<td><a class="btn btn-info" th:href="@{/edit/{id}(id=${todo.id})}">Edit</a></td>
+    		<td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${todo.id})}">Delete</a></td>
     	</tr>
      </table>
 	   <a href="/add" class="btn btn-primary">Add Todo</a>    	     
